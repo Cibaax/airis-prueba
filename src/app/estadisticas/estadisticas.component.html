@@ -1,0 +1,24 @@
+<div>
+    <app-header></app-header> 
+    <table mat-table [dataSource]="ventasPorMes" class="mat-elevation-z8">
+  <ng-container matColumnDef="mes">
+    <th mat-header-cell *matHeaderCellDef>Mes</th>
+    <td mat-cell *matCellDef="let venta">{{ venta.mes }}</td>
+  </ng-container>
+  <ng-container matColumnDef="cantidadInmuebles">
+    <th mat-header-cell *matHeaderCellDef>Cantidad de Inmuebles</th>
+    <td mat-cell *matCellDef="let venta">{{ venta.cantidadInmuebles }}</td>
+  </ng-container>
+  <ng-container matColumnDef="totalVenta">
+    <th mat-header-cell *matHeaderCellDef>Total de Venta</th>
+    <td mat-cell *matCellDef="let venta">{{ venta.totalVenta }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+</table>
+
+      
+      
+
+</div>

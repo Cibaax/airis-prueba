@@ -1,0 +1,34 @@
+<div>
+  <app-header></app-header>
+  <div id="map" style="height: 90vh;"></div>
+  <p class="coordenadas" *ngIf="mostrarCoordenadas">Latitud: {{ latitud }} - Longitud: {{ longitud }}</p>
+  <button mat-fab color="primary" (click)="mostrarOcultarFormulario()" class="add-button">
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <div *ngIf="mostrarFormulario" class="formulario">
+    <form (ngSubmit)="agregarMarcador()">
+      <button mat-icon-button class="close-button" (click)="mostrarOcultarFormulario()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <h3>Crear Marcador</h3>
+
+      <mat-form-field>
+        <mat-label>Descripción</mat-label>
+        <input matInput type="text" id="descripcion" name="descripcion" [(ngModel)]="descripcion">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Latitud</mat-label>
+        <input matInput type="number" id="latitud" name="latitud" [(ngModel)]="latitud" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Longitud</mat-label>
+        <input matInput type="number" id="longitud" name="longitud" [(ngModel)]="longitud" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Agregar Marcador</button>
+    </form>
+  </div>
+</div>

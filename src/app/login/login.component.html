@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="center-container">
+    <div class="login-box">
+    <h2>Iniciar sesión</h2>
+      <form (ngSubmit)="onSubmit()" class="login-form">
+        <div class="form-group">
+          <mat-form-field>
+            <mat-label>Nombre de usuario:</mat-label>
+            <input matInput type="text" id="username" required [(ngModel)]="username" name="username">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field>
+            <mat-label>Contraseña:</mat-label>
+            <input matInput type="password" id="password" required [(ngModel)]="password" name="password">
+          </mat-form-field>
+        </div>
+        <button mat-raised-button type="submit">Iniciar sesión</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+  
